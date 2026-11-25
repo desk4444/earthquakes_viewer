@@ -32,7 +32,7 @@ def build_and_save_map_from_data(data_path):
                 fill_opacity=0.6,
                 popup=folium.Popup(popup_html, max_width=300)
             ).add_to(world_map)
-    day = day = Path(data_path).stem
+    day = Path(data_path).stem
     map_path = "{0}/{1}.html".format(MAP_DIR, day)
     Path(map_path).parent.mkdir(parents=True, exist_ok=True)
     world_map.save(map_path)

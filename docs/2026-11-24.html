@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_78ee225952ac3a524be3b97572752eb6 {
+                    position: relative;
+                    width: 100.0vw;
+                    height: 100.0vh;
+
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>/*
+ * Glyphicons Halflings -- the icon font used by folium's default Awesome Markers
+ * (Icon(prefix="glyphicon")). Extracted from Bootstrap 3's glyphicon rules only.
+ *
+ * folium previously loaded netdna's bootstrap-glyphicons.css, which despite its
+ * name ships a full Bootstrap-3 base stylesheet (normalize reset + global `body`
+ * rules) that leaked onto the host page (GH-1820). This file provides just the
+ * @font-face and .glyphicon/.glyphicon-* rules needed for the markers, with no
+ * page-wide side effects. Font files are served from jsDelivr.
+ */
+@font-face{font-family:'Glyphicons Halflings';src:url('https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/fonts/glyphicons-halflings-regular.eot');src:url('https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),url('https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/fonts/glyphicons-halflings-regular.woff') format('woff'),url('https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/fonts/glyphicons-halflings-regular.ttf') format('truetype'),url('https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');}.glyphicon{position:relative;top:1px;display:inline-block;font-family:'Glyphicons Halflings';font-style:normal;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased;}
+.glyphicon-asterisk:before{content:"\2a";}
+.glyphicon-plus:before{content:"\2b";}
+.glyphicon-euro:before{content:"\20ac";}
+.glyphicon-minus:before{content:"\2212";}
+.glyphicon-cloud:before{content:"\2601";}
+.glyphicon-envelope:before{content:"\2709";}
+.glyphicon-pencil:before{content:"\270f";}
+.glyphicon-glass:before{content:"\e001";}
+.glyphicon-music:before{content:"\e002";}
+.glyphicon-search:before{content:"\e003";}
+.glyphicon-heart:before{content:"\e005";}
+.glyphicon-star:before{content:"\e006";}
+.glyphicon-star-empty:before{content:"\e007";}
+.glyphicon-user:before{content:"\e008";}
+.glyphicon-film:before{content:"\e009";}
+.glyphicon-th-large:before{content:"\e010";}
+.glyphicon-th:before{content:"\e011";}
+.glyphicon-th-list:before{content:"\e012";}
+.glyphicon-ok:before{content:"\e013";}
+.glyphicon-remove:before{content:"\e014";}
+.glyphicon-zoom-in:before{content:"\e015";}
+.glyphicon-zoom-out:before{content:"\e016";}
+.glyphicon-off:before{content:"\e017";}
+.glyphicon-signal:before{content:"\e018";}
+.glyphicon-cog:before{content:"\e019";}
+.glyphicon-trash:before{content:"\e020";}
+.glyphicon-home:before{content:"\e021";}
+.glyphicon-file:before{content:"\e022";}
+.glyphicon-time:before{content:"\e023";}
+.glyphicon-road:before{content:"\e024";}
+.glyphicon-download-alt:before{content:"\e025";}
+.glyphicon-download:before{content:"\e026";}
+.glyphicon-upload:before{content:"\e027";}
+.glyphicon-inbox:before{content:"\e028";}
+.glyphicon-play-circle:before{content:"\e029";}
+.glyphicon-repeat:before{content:"\e030";}
+.glyphicon-refresh:before{content:"\e031";}
+.glyphicon-list-alt:before{content:"\e032";}
+.glyphicon-flag:before{content:"\e034";}
+.glyphicon-headphones:before{content:"\e035";}
+.glyphicon-volume-off:before{content:"\e036";}
+.glyphicon-volume-down:before{content:"\e037";}
+.glyphicon-volume-up:before{content:"\e038";}
+.glyphicon-qrcode:before{content:"\e039";}
+.glyphicon-barcode:before{content:"\e040";}
+.glyphicon-tag:before{content:"\e041";}
+.glyphicon-tags:before{content:"\e042";}
+.glyphicon-book:before{content:"\e043";}
+.glyphicon-print:before{content:"\e045";}
+.glyphicon-font:before{content:"\e047";}
+.glyphicon-bold:before{content:"\e048";}
+.glyphicon-italic:before{content:"\e049";}
+.glyphicon-text-height:before{content:"\e050";}
+.glyphicon-text-width:before{content:"\e051";}
+.glyphicon-align-left:before{content:"\e052";}
+.glyphicon-align-center:before{content:"\e053";}
+.glyphicon-align-right:before{content:"\e054";}
+.glyphicon-align-justify:before{content:"\e055";}
+.glyphicon-list:before{content:"\e056";}
+.glyphicon-indent-left:before{content:"\e057";}
+.glyphicon-indent-right:before{content:"\e058";}
+.glyphicon-facetime-video:before{content:"\e059";}
+.glyphicon-picture:before{content:"\e060";}
+.glyphicon-map-marker:before{content:"\e062";}
+.glyphicon-adjust:before{content:"\e063";}
+.glyphicon-tint:before{content:"\e064";}
+.glyphicon-edit:before{content:"\e065";}
+.glyphicon-share:before{content:"\e066";}
+.glyphicon-check:before{content:"\e067";}
+.glyphicon-move:before{content:"\e068";}
+.glyphicon-step-backward:before{content:"\e069";}
+.glyphicon-fast-backward:before{content:"\e070";}
+.glyphicon-backward:before{content:"\e071";}
+.glyphicon-play:before{content:"\e072";}
+.glyphicon-pause:before{content:"\e073";}
+.glyphicon-stop:before{content:"\e074";}
+.glyphicon-forward:before{content:"\e075";}
+.glyphicon-fast-forward:before{content:"\e076";}
+.glyphicon-step-forward:before{content:"\e077";}
+.glyphicon-eject:before{content:"\e078";}
+.glyphicon-chevron-left:before{content:"\e079";}
+.glyphicon-chevron-right:before{content:"\e080";}
+.glyphicon-plus-sign:before{content:"\e081";}
+.glyphicon-minus-sign:before{content:"\e082";}
+.glyphicon-remove-sign:before{content:"\e083";}
+.glyphicon-ok-sign:before{content:"\e084";}
+.glyphicon-question-sign:before{content:"\e085";}
+.glyphicon-info-sign:before{content:"\e086";}
+.glyphicon-screenshot:before{content:"\e087";}
+.glyphicon-remove-circle:before{content:"\e088";}
+.glyphicon-ok-circle:before{content:"\e089";}
+.glyphicon-ban-circle:before{content:"\e090";}
+.glyphicon-arrow-left:before{content:"\e091";}
+.glyphicon-arrow-right:before{content:"\e092";}
+.glyphicon-arrow-up:before{content:"\e093";}
+.glyphicon-arrow-down:before{content:"\e094";}
+.glyphicon-share-alt:before{content:"\e095";}
+.glyphicon-resize-full:before{content:"\e096";}
+.glyphicon-resize-small:before{content:"\e097";}
+.glyphicon-exclamation-sign:before{content:"\e101";}
+.glyphicon-gift:before{content:"\e102";}
+.glyphicon-leaf:before{content:"\e103";}
+.glyphicon-eye-open:before{content:"\e105";}
+.glyphicon-eye-close:before{content:"\e106";}
+.glyphicon-warning-sign:before{content:"\e107";}
+.glyphicon-plane:before{content:"\e108";}
+.glyphicon-random:before{content:"\e110";}
+.glyphicon-comment:before{content:"\e111";}
+.glyphicon-magnet:before{content:"\e112";}
+.glyphicon-chevron-up:before{content:"\e113";}
+.glyphicon-chevron-down:before{content:"\e114";}
+.glyphicon-retweet:before{content:"\e115";}
+.glyphicon-shopping-cart:before{content:"\e116";}
+.glyphicon-folder-close:before{content:"\e117";}
+.glyphicon-folder-open:before{content:"\e118";}
+.glyphicon-resize-vertical:before{content:"\e119";}
+.glyphicon-resize-horizontal:before{content:"\e120";}
+.glyphicon-hdd:before{content:"\e121";}
+.glyphicon-bullhorn:before{content:"\e122";}
+.glyphicon-certificate:before{content:"\e124";}
+.glyphicon-thumbs-up:before{content:"\e125";}
+.glyphicon-thumbs-down:before{content:"\e126";}
+.glyphicon-hand-right:before{content:"\e127";}
+.glyphicon-hand-left:before{content:"\e128";}
+.glyphicon-hand-up:before{content:"\e129";}
+.glyphicon-hand-down:before{content:"\e130";}
+.glyphicon-circle-arrow-right:before{content:"\e131";}
+.glyphicon-circle-arrow-left:before{content:"\e132";}
+.glyphicon-circle-arrow-up:before{content:"\e133";}
+.glyphicon-circle-arrow-down:before{content:"\e134";}
+.glyphicon-globe:before{content:"\e135";}
+.glyphicon-tasks:before{content:"\e137";}
+.glyphicon-filter:before{content:"\e138";}
+.glyphicon-fullscreen:before{content:"\e140";}
+.glyphicon-dashboard:before{content:"\e141";}
+.glyphicon-heart-empty:before{content:"\e143";}
+.glyphicon-link:before{content:"\e144";}
+.glyphicon-phone:before{content:"\e145";}
+.glyphicon-usd:before{content:"\e148";}
+.glyphicon-gbp:before{content:"\e149";}
+.glyphicon-sort:before{content:"\e150";}
+.glyphicon-sort-by-alphabet:before{content:"\e151";}
+.glyphicon-sort-by-alphabet-alt:before{content:"\e152";}
+.glyphicon-sort-by-order:before{content:"\e153";}
+.glyphicon-sort-by-order-alt:before{content:"\e154";}
+.glyphicon-sort-by-attributes:before{content:"\e155";}
+.glyphicon-sort-by-attributes-alt:before{content:"\e156";}
+.glyphicon-unchecked:before{content:"\e157";}
+.glyphicon-expand:before{content:"\e158";}
+.glyphicon-collapse-down:before{content:"\e159";}
+.glyphicon-collapse-up:before{content:"\e160";}
+.glyphicon-log-in:before{content:"\e161";}
+.glyphicon-flash:before{content:"\e162";}
+.glyphicon-log-out:before{content:"\e163";}
+.glyphicon-new-window:before{content:"\e164";}
+.glyphicon-record:before{content:"\e165";}
+.glyphicon-save:before{content:"\e166";}
+.glyphicon-open:before{content:"\e167";}
+.glyphicon-saved:before{content:"\e168";}
+.glyphicon-import:before{content:"\e169";}
+.glyphicon-export:before{content:"\e170";}
+.glyphicon-send:before{content:"\e171";}
+.glyphicon-floppy-disk:before{content:"\e172";}
+.glyphicon-floppy-saved:before{content:"\e173";}
+.glyphicon-floppy-remove:before{content:"\e174";}
+.glyphicon-floppy-save:before{content:"\e175";}
+.glyphicon-floppy-open:before{content:"\e176";}
+.glyphicon-credit-card:before{content:"\e177";}
+.glyphicon-transfer:before{content:"\e178";}
+.glyphicon-cutlery:before{content:"\e179";}
+.glyphicon-header:before{content:"\e180";}
+.glyphicon-compressed:before{content:"\e181";}
+.glyphicon-earphone:before{content:"\e182";}
+.glyphicon-phone-alt:before{content:"\e183";}
+.glyphicon-tower:before{content:"\e184";}
+.glyphicon-stats:before{content:"\e185";}
+.glyphicon-sd-video:before{content:"\e186";}
+.glyphicon-hd-video:before{content:"\e187";}
+.glyphicon-subtitles:before{content:"\e188";}
+.glyphicon-sound-stereo:before{content:"\e189";}
+.glyphicon-sound-dolby:before{content:"\e190";}
+.glyphicon-sound-5-1:before{content:"\e191";}
+.glyphicon-sound-6-1:before{content:"\e192";}
+.glyphicon-sound-7-1:before{content:"\e193";}
+.glyphicon-copyright-mark:before{content:"\e194";}
+.glyphicon-registration-mark:before{content:"\e195";}
+.glyphicon-cloud-download:before{content:"\e197";}
+.glyphicon-cloud-upload:before{content:"\e198";}
+.glyphicon-tree-conifer:before{content:"\e199";}
+.glyphicon-tree-deciduous:before{content:"\e200";}
+.glyphicon-briefcase:before{content:"\1f4bc";}
+.glyphicon-calendar:before{content:"\1f4c5";}
+.glyphicon-pushpin:before{content:"\1f4cc";}
+.glyphicon-paperclip:before{content:"\1f4ce";}
+.glyphicon-camera:before{content:"\1f4f7";}
+.glyphicon-lock:before{content:"\1f512";}
+.glyphicon-bell:before{content:"\1f514";}
+.glyphicon-bookmark:before{content:"\1f516";}
+.glyphicon-fire:before{content:"\1f525";}
+.glyphicon-wrench:before{content:"\1f527";}
+</style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_78ee225952ac3a524be3b97572752eb6" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_78ee225952ac3a524be3b97572752eb6 = L.map(
+                "map_78ee225952ac3a524be3b97572752eb6",
+                {
+                    center: [0.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 1,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_a6dc17af318377e6e4aba826ad58f7c7 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a6dc17af318377e6e4aba826ad58f7c7.addTo(map_78ee225952ac3a524be3b97572752eb6);
+        
+    
+            var circle_marker_cb16b1002db385cd1617293504205599 = L.circleMarker(
+                [10.9039, 122.4796],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.4, "stroke": true, "weight": 3}
+            ).addTo(map_78ee225952ac3a524be3b97572752eb6);
+        
+    
+        var popup_b1da81adaf1f29e2aca21bd03e395f2d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a5619d02dfc0509288254ca4a2ebefce = $(`<div id="html_a5619d02dfc0509288254ca4a2ebefce" style="width: 100.0%; height: 100.0%;">         <b>2 km NNW of Cabatuan, Philippines</b><br>         Magnitude: 4.7<br>         Depth: 35.846 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000udck" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_b1da81adaf1f29e2aca21bd03e395f2d.setContent(html_a5619d02dfc0509288254ca4a2ebefce);
+            
+        
+
+        circle_marker_cb16b1002db385cd1617293504205599.bindPopup(popup_b1da81adaf1f29e2aca21bd03e395f2d)
+        ;
+
+        
+    
+    
+            var circle_marker_a9b3a6cce681fb96a6ae3d39d95fcab7 = L.circleMarker(
+                [-5.6002, 153.6843],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_78ee225952ac3a524be3b97572752eb6);
+        
+    
+        var popup_326bdcd62a7d16a163f919f898db4dcc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1b042fe872e27a088d77d1df2f07279f = $(`<div id="html_1b042fe872e27a088d77d1df2f07279f" style="width: 100.0%; height: 100.0%;">         <b>209 km SE of Kokopo, Papua New Guinea</b><br>         Magnitude: 5<br>         Depth: 10 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000udbn" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_326bdcd62a7d16a163f919f898db4dcc.setContent(html_1b042fe872e27a088d77d1df2f07279f);
+            
+        
+
+        circle_marker_a9b3a6cce681fb96a6ae3d39d95fcab7.bindPopup(popup_326bdcd62a7d16a163f919f898db4dcc)
+        ;
+
+        
+    
+    
+            var circle_marker_d6a5397817942b8d3a6064252a3ea134 = L.circleMarker(
+                [-30.9455, -71.5206],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.2, "stroke": true, "weight": 3}
+            ).addTo(map_78ee225952ac3a524be3b97572752eb6);
+        
+    
+        var popup_0cdf7448bb7782286b63ca23fbcb0035 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1ccf9f416ba7d0c995a80cb2c4751973 = $(`<div id="html_1ccf9f416ba7d0c995a80cb2c4751973" style="width: 100.0%; height: 100.0%;">         <b>49 km SW of Ovalle, Chile</b><br>         Magnitude: 4.6<br>         Depth: 50.858 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000udb8" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_0cdf7448bb7782286b63ca23fbcb0035.setContent(html_1ccf9f416ba7d0c995a80cb2c4751973);
+            
+        
+
+        circle_marker_d6a5397817942b8d3a6064252a3ea134.bindPopup(popup_0cdf7448bb7782286b63ca23fbcb0035)
+        ;
+
+        
+    
+    
+            var circle_marker_7dc374829d9714768e2fa8e1f5311b21 = L.circleMarker(
+                [28.4712, 104.9434],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.6, "stroke": true, "weight": 3}
+            ).addTo(map_78ee225952ac3a524be3b97572752eb6);
+        
+    
+        var popup_0c05a3f0acdd4df6e6ec860916ae908f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_048b333b4a38d8b09798e3dc29c6dd35 = $(`<div id="html_048b333b4a38d8b09798e3dc29c6dd35" style="width: 100.0%; height: 100.0%;">         <b>12 km S of Changning, China</b><br>         Magnitude: 4.3<br>         Depth: 10 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000udau" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_0c05a3f0acdd4df6e6ec860916ae908f.setContent(html_048b333b4a38d8b09798e3dc29c6dd35);
+            
+        
+
+        circle_marker_7dc374829d9714768e2fa8e1f5311b21.bindPopup(popup_0c05a3f0acdd4df6e6ec860916ae908f)
+        ;
+
+        
+    
+    
+            var circle_marker_35a82ec2262eee7a2de9efceb032c01d = L.circleMarker(
+                [31.8911, 130.8637],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.8, "stroke": true, "weight": 3}
+            ).addTo(map_78ee225952ac3a524be3b97572752eb6);
+        
+    
+        var popup_fc69b3c16cb5c7eafec65645db817f56 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fc0abed14ba4638e21ba5b790b7e2650 = $(`<div id="html_fc0abed14ba4638e21ba5b790b7e2650" style="width: 100.0%; height: 100.0%;">         <b>15 km SW of Kobayashi, Japan</b><br>         Magnitude: 4.4<br>         Depth: 136.304 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud9h" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_fc69b3c16cb5c7eafec65645db817f56.setContent(html_fc0abed14ba4638e21ba5b790b7e2650);
+            
+        
+
+        circle_marker_35a82ec2262eee7a2de9efceb032c01d.bindPopup(popup_fc69b3c16cb5c7eafec65645db817f56)
+        ;
+
+        
+    
+    
+            var circle_marker_978b5e00a8c64936661f84493d33c7f3 = L.circleMarker(
+                [61.32, -150.154],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.4, "stroke": true, "weight": 3}
+            ).addTo(map_78ee225952ac3a524be3b97572752eb6);
+        
+    
+        var popup_a000a1af86067cf3f892bd35666d4059 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_91daa86e3cf4c3f54c6c2752de3528c9 = $(`<div id="html_91daa86e3cf4c3f54c6c2752de3528c9" style="width: 100.0%; height: 100.0%;">         <b>10 km WSW of Point MacKenzie, Alaska</b><br>         Magnitude: 4.2<br>         Depth: 44.6 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/aka2026xhgksb" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_a000a1af86067cf3f892bd35666d4059.setContent(html_91daa86e3cf4c3f54c6c2752de3528c9);
+            
+        
+
+        circle_marker_978b5e00a8c64936661f84493d33c7f3.bindPopup(popup_a000a1af86067cf3f892bd35666d4059)
+        ;
+
+        
+    
+    
+            var circle_marker_1be3db907769c8c889b78d5ce45f5d74 = L.circleMarker(
+                [39.9395, 20.8439],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.4, "stroke": true, "weight": 3}
+            ).addTo(map_78ee225952ac3a524be3b97572752eb6);
+        
+    
+        var popup_43dd4f36dd8084487b99a91039a41f54 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7387c0ebb5a0fb6a520b367b21996951 = $(`<div id="html_7387c0ebb5a0fb6a520b367b21996951" style="width: 100.0%; height: 100.0%;">         <b>14 km SSE of Kónitsa, Greece</b><br>         Magnitude: 4.2<br>         Depth: 10 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud82" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_43dd4f36dd8084487b99a91039a41f54.setContent(html_7387c0ebb5a0fb6a520b367b21996951);
+            
+        
+
+        circle_marker_1be3db907769c8c889b78d5ce45f5d74.bindPopup(popup_43dd4f36dd8084487b99a91039a41f54)
+        ;
+
+        
+    
+    
+            var circle_marker_cc52535d6e604217ec944952e62aae64 = L.circleMarker(
+                [37.0918, 27.779],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.4, "stroke": true, "weight": 3}
+            ).addTo(map_78ee225952ac3a524be3b97572752eb6);
+        
+    
+        var popup_29b382fb43cb3d99616b50d8eae821a3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_929fb7c65eab835d8a8ffc4c3e598717 = $(`<div id="html_929fb7c65eab835d8a8ffc4c3e598717" style="width: 100.0%; height: 100.0%;">         <b>18 km ESE of Güvercinlik, Turkey</b><br>         Magnitude: 4.7<br>         Depth: 10 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud7z" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_29b382fb43cb3d99616b50d8eae821a3.setContent(html_929fb7c65eab835d8a8ffc4c3e598717);
+            
+        
+
+        circle_marker_cc52535d6e604217ec944952e62aae64.bindPopup(popup_29b382fb43cb3d99616b50d8eae821a3)
+        ;
+
+        
+    
+    
+            var circle_marker_d5c9bceb4f6d4917c4530fb8cf5484d0 = L.circleMarker(
+                [-28.6118, -71.4886],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.6, "stroke": true, "weight": 3}
+            ).addTo(map_78ee225952ac3a524be3b97572752eb6);
+        
+    
+        var popup_130ee01b719455a8e114206f03fc5b56 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c7caa5a2066b275fbfde80a1a2ae8d4e = $(`<div id="html_c7caa5a2066b275fbfde80a1a2ae8d4e" style="width: 100.0%; height: 100.0%;">         <b>71 km W of Vallenar, Chile</b><br>         Magnitude: 4.8<br>         Depth: 33.412 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud7h" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_130ee01b719455a8e114206f03fc5b56.setContent(html_c7caa5a2066b275fbfde80a1a2ae8d4e);
+            
+        
+
+        circle_marker_d5c9bceb4f6d4917c4530fb8cf5484d0.bindPopup(popup_130ee01b719455a8e114206f03fc5b56)
+        ;
+
+        
+    
+    
+            var circle_marker_0b23bf8808be172ab2e3b466f4a08165 = L.circleMarker(
+                [13.5637, 144.4957],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_78ee225952ac3a524be3b97572752eb6);
+        
+    
+        var popup_8b90592d6c07b50f7e319744dbae0f4b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fd17fee9f76006608e4ec48e57cfc330 = $(`<div id="html_fd17fee9f76006608e4ec48e57cfc330" style="width: 100.0%; height: 100.0%;">         <b>24 km WNW of Piti Village, Guam</b><br>         Magnitude: 5<br>         Depth: 107.571 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud73" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_8b90592d6c07b50f7e319744dbae0f4b.setContent(html_fd17fee9f76006608e4ec48e57cfc330);
+            
+        
+
+        circle_marker_0b23bf8808be172ab2e3b466f4a08165.bindPopup(popup_8b90592d6c07b50f7e319744dbae0f4b)
+        ;
+
+        
+    
+    
+            var circle_marker_9658c27ed1ec3662bcc174ac3a029089 = L.circleMarker(
+                [14.442, -93.2417],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.4, "stroke": true, "weight": 3}
+            ).addTo(map_78ee225952ac3a524be3b97572752eb6);
+        
+    
+        var popup_52e78ac5d465dd725c85afd410b3eb33 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_493464ce20a437b8955213087ac747dd = $(`<div id="html_493464ce20a437b8955213087ac747dd" style="width: 100.0%; height: 100.0%;">         <b>93 km WSW of Puerto Madero, Mexico</b><br>         Magnitude: 5.2<br>         Depth: 35 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud6z" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_52e78ac5d465dd725c85afd410b3eb33.setContent(html_493464ce20a437b8955213087ac747dd);
+            
+        
+
+        circle_marker_9658c27ed1ec3662bcc174ac3a029089.bindPopup(popup_52e78ac5d465dd725c85afd410b3eb33)
+        ;
+
+        
+    
+    
+            var circle_marker_5cc1b0dd0ef5194ef17143982fa82774 = L.circleMarker(
+                [-17.7049, 65.6995],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.8, "stroke": true, "weight": 3}
+            ).addTo(map_78ee225952ac3a524be3b97572752eb6);
+        
+    
+        var popup_6115adbd99cf2cb56ce8622475393cbb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c1dfe1da4557ba911f46e2d7edbc7609 = $(`<div id="html_c1dfe1da4557ba911f46e2d7edbc7609" style="width: 100.0%; height: 100.0%;">         <b>Mauritius - Reunion region</b><br>         Magnitude: 6.4<br>         Depth: 10 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud6h" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_6115adbd99cf2cb56ce8622475393cbb.setContent(html_c1dfe1da4557ba911f46e2d7edbc7609);
+            
+        
+
+        circle_marker_5cc1b0dd0ef5194ef17143982fa82774.bindPopup(popup_6115adbd99cf2cb56ce8622475393cbb)
+        ;
+
+        
+    
+    
+            var circle_marker_9472f7aa38266a1e944f9efca7f6b8a6 = L.circleMarker(
+                [-7.21, 125.1897],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.8, "stroke": true, "weight": 3}
+            ).addTo(map_78ee225952ac3a524be3b97572752eb6);
+        
+    
+        var popup_7c1ae616dd940a4452e2c72d5438a21f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ea5951b0f82a9fa7d9a862c6e937fcf1 = $(`<div id="html_ea5951b0f82a9fa7d9a862c6e937fcf1" style="width: 100.0%; height: 100.0%;">         <b>153 km N of Likisá, Timor Leste</b><br>         Magnitude: 4.4<br>         Depth: 514.284 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud41" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_7c1ae616dd940a4452e2c72d5438a21f.setContent(html_ea5951b0f82a9fa7d9a862c6e937fcf1);
+            
+        
+
+        circle_marker_9472f7aa38266a1e944f9efca7f6b8a6.bindPopup(popup_7c1ae616dd940a4452e2c72d5438a21f)
+        ;
+
+        
+    
+    
+            var circle_marker_96ebcbd141fa29f7810d787a423a9a8e = L.circleMarker(
+                [28.2447, 66.2542],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.6, "stroke": true, "weight": 3}
+            ).addTo(map_78ee225952ac3a524be3b97572752eb6);
+        
+    
+        var popup_cf5788ffa1f3ee93ea64000b0fd2cec7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3bfd27152d6e609e947633520d67c1c6 = $(`<div id="html_3bfd27152d6e609e947633520d67c1c6" style="width: 100.0%; height: 100.0%;">         <b>27 km S of Surab, Pakistan</b><br>         Magnitude: 4.3<br>         Depth: 10 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud3q" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_cf5788ffa1f3ee93ea64000b0fd2cec7.setContent(html_3bfd27152d6e609e947633520d67c1c6);
+            
+        
+
+        circle_marker_96ebcbd141fa29f7810d787a423a9a8e.bindPopup(popup_cf5788ffa1f3ee93ea64000b0fd2cec7)
+        ;
+
+        
+    
+    
+            var circle_marker_ecd56000a5cad925dac28bd40119a017 = L.circleMarker(
+                [7.5171, -80.6224],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.0, "stroke": true, "weight": 3}
+            ).addTo(map_78ee225952ac3a524be3b97572752eb6);
+        
+    
+        var popup_5a53590aed8928010cda5cc7d080fba8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_905f7394b76610e085531dd498fdb7fc = $(`<div id="html_905f7394b76610e085531dd498fdb7fc" style="width: 100.0%; height: 100.0%;">         <b>9 km NNW of La Tronosa, Panama</b><br>         Magnitude: 4.5<br>         Depth: 15.655 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud3m" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_5a53590aed8928010cda5cc7d080fba8.setContent(html_905f7394b76610e085531dd498fdb7fc);
+            
+        
+
+        circle_marker_ecd56000a5cad925dac28bd40119a017.bindPopup(popup_5a53590aed8928010cda5cc7d080fba8)
+        ;
+
+        
+    
+    
+            var circle_marker_d18f3cfcf1609eda0aad42d4ccc4e69f = L.circleMarker(
+                [27.8328, 87.9467],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.6, "stroke": true, "weight": 3}
+            ).addTo(map_78ee225952ac3a524be3b97572752eb6);
+        
+    
+        var popup_55f00e8e0819f97cd80c6a0f88b78626 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b6bd68e1c0b0dd93acd819ff35bcb34e = $(`<div id="html_b6bd68e1c0b0dd93acd819ff35bcb34e" style="width: 100.0%; height: 100.0%;">         <b>67 km WNW of Mangan, India</b><br>         Magnitude: 5.3<br>         Depth: 10 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud3i" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_55f00e8e0819f97cd80c6a0f88b78626.setContent(html_b6bd68e1c0b0dd93acd819ff35bcb34e);
+            
+        
+
+        circle_marker_d18f3cfcf1609eda0aad42d4ccc4e69f.bindPopup(popup_55f00e8e0819f97cd80c6a0f88b78626)
+        ;
+
+        
+    
+</script>
+</html>
