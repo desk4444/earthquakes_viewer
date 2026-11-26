@@ -1,0 +1,581 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "generated": 1795708421000,
+    "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2026-11-25&endtime=2026-11-26&minmagnitude=4",
+    "title": "USGS Earthquakes",
+    "status": 200,
+    "api": "2.8.4",
+    "count": 14
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.8,
+        "place": "190 km N of Hicks Bay, New Zealand",
+        "time": 1795642353545,
+        "updated": 1795643497040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udib",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000udib&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 354,
+        "net": "us",
+        "code": "6000udib",
+        "ids": ",us6000udib,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 26,
+        "dmin": 1.671,
+        "rms": 0.42,
+        "gap": 145,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.8 - 190 km N of Hicks Bay, New Zealand"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          178.5511,
+          -35.8989,
+          10
+        ]
+      },
+      "id": "us6000udib"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.7,
+        "place": "13 km NW of Port-Vila, Vanuatu",
+        "time": 1795633169141,
+        "updated": 1795680287100,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udht",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000udht&format=geojson",
+        "felt": 5,
+        "cdi": 2.4,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 341,
+        "net": "us",
+        "code": "6000udht",
+        "ids": ",us6000udht,",
+        "sources": ",us,",
+        "types": ",dyfi,origin,phase-data,",
+        "nst": 31,
+        "dmin": 4.707,
+        "rms": 0.87,
+        "gap": 76,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.7 - 13 km NW of Port-Vila, Vanuatu"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          168.224,
+          -17.6508,
+          51.54
+        ]
+      },
+      "id": "us6000udht"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.4,
+        "place": "5 km NNW of Ith\u00e1ki, Greece",
+        "time": 1795630079725,
+        "updated": 1795632640040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udhb",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000udhb&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 298,
+        "net": "us",
+        "code": "6000udhb",
+        "ids": ",us6000udhb,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 41,
+        "dmin": 1.422,
+        "rms": 0.83,
+        "gap": 121,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.4 - 5 km NNW of Ith\u00e1ki, Greece"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.6921,
+          38.4121,
+          49.971
+        ]
+      },
+      "id": "us6000udhb"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.3,
+        "place": "132 km S of False Pass, Alaska",
+        "time": 1795612568562,
+        "updated": 1795624947666,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udf9",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000udf9&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": 2.255,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 284,
+        "net": "us",
+        "code": "6000udf9",
+        "ids": ",aka2026xivsqa,us6000udf9,",
+        "sources": ",ak,us,",
+        "types": ",origin,phase-data,shakemap,",
+        "nst": 62,
+        "dmin": 1.197,
+        "rms": 0.79,
+        "gap": 90,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.3 - 132 km S of False Pass, Alaska"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -163.0363,
+          53.6824,
+          36.868
+        ]
+      },
+      "id": "us6000udf9"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5,
+        "place": "67 km NNE of Luwuk, Indonesia",
+        "time": 1795608492731,
+        "updated": 1795609540040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udf2",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000udf2&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 385,
+        "net": "us",
+        "code": "6000udf2",
+        "ids": ",us6000udf2,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 73,
+        "dmin": 5.629,
+        "rms": 0.79,
+        "gap": 64,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 5.0 - 67 km NNE of Luwuk, Indonesia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          123.0018,
+          -0.3849,
+          106.384
+        ]
+      },
+      "id": "us6000udf2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.3,
+        "place": "18 km SSW of Yonakuni, Japan",
+        "time": 1795601925642,
+        "updated": 1795602794040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udew",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000udew&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 284,
+        "net": "us",
+        "code": "6000udew",
+        "ids": ",us6000udew,",
+        "sources": ",us,",
+        "types": ",moment-tensor,origin,phase-data,",
+        "nst": 38,
+        "dmin": 0.171,
+        "rms": 0.55,
+        "gap": 64,
+        "magType": "mwr",
+        "type": "earthquake",
+        "title": "M 4.3 - 18 km SSW of Yonakuni, Japan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          122.9622,
+          24.3005,
+          46.912
+        ]
+      },
+      "id": "us6000udew"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.2,
+        "place": "Revilla Gigedo Islands region",
+        "time": 1795600868791,
+        "updated": 1795601987040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udes",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000udes&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 271,
+        "net": "us",
+        "code": "6000udes",
+        "ids": ",us6000udes,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 23,
+        "dmin": 6.621,
+        "rms": 0.84,
+        "gap": 201,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.2 - Revilla Gigedo Islands region"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.946,
+          19.8382,
+          10
+        ]
+      },
+      "id": "us6000udes"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.2,
+        "place": "Izu Islands, Japan region",
+        "time": 1795600470779,
+        "updated": 1795601565040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udeq",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000udeq&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 271,
+        "net": "us",
+        "code": "6000udeq",
+        "ids": ",us6000udeq,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 50,
+        "dmin": 5.543,
+        "rms": 0.54,
+        "gap": 142,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.2 - Izu Islands, Japan region"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          138.7805,
+          29.9916,
+          432.459
+        ]
+      },
+      "id": "us6000udeq"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5.3,
+        "place": "83 km ESE of Hengchun, Taiwan",
+        "time": 1795596436394,
+        "updated": 1795597440040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udef",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000udef&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 432,
+        "net": "us",
+        "code": "6000udef",
+        "ids": ",us6000udef,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 98,
+        "dmin": 1.078,
+        "rms": 1.06,
+        "gap": 57,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 5.3 - 83 km ESE of Hengchun, Taiwan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5241,
+          21.8162,
+          10
+        ]
+      },
+      "id": "us6000udef"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.1,
+        "place": "20 km S of Weston, Colorado",
+        "time": 1795592444054,
+        "updated": 1795679454901,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ude6",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000ude6&format=geojson",
+        "felt": 44,
+        "cdi": 3.9,
+        "mmi": 5.23,
+        "alert": "green",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 276,
+        "net": "us",
+        "code": "6000ude6",
+        "ids": ",us6000ude6,",
+        "sources": ",us,",
+        "types": ",dyfi,event-sequence,losspager,moment-tensor,oaf,origin,phase-data,shakemap,",
+        "nst": 19,
+        "dmin": 0.178,
+        "rms": 0.76,
+        "gap": 78,
+        "magType": "mwr",
+        "type": "earthquake",
+        "title": "M 4.1 - 20 km S of Weston, Colorado"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.8395,
+          36.9498,
+          5
+        ]
+      },
+      "id": "us6000ude6"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5.2,
+        "place": "175 km N of Hicks Bay, New Zealand",
+        "time": 1795588448672,
+        "updated": 1795590191040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ude3",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000ude3&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 416,
+        "net": "us",
+        "code": "6000ude3",
+        "ids": ",us6000ude3,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 43,
+        "dmin": 1.541,
+        "rms": 1.04,
+        "gap": 84,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 5.2 - 175 km N of Hicks Bay, New Zealand"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          178.3688,
+          -36.0191,
+          25.327
+        ]
+      },
+      "id": "us6000ude3"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.7,
+        "place": "178 km ESE of Kimbe, Papua New Guinea",
+        "time": 1795581032480,
+        "updated": 1795583277040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000uddj",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000uddj&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 340,
+        "net": "us",
+        "code": "6000uddj",
+        "ids": ",us6000uddj,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 23,
+        "dmin": 2.236,
+        "rms": 0.68,
+        "gap": 128,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.7 - 178 km ESE of Kimbe, Papua New Guinea"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.5376,
+          -6.3544,
+          10
+        ]
+      },
+      "id": "us6000uddj"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5.9,
+        "place": "Balleny Islands region",
+        "time": 1795570725672,
+        "updated": 1795657425359,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udd1",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000udd1&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": 0,
+        "alert": "green",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 536,
+        "net": "us",
+        "code": "6000udd1",
+        "ids": ",usauto6000udd1,us6000udd1,",
+        "sources": ",usauto,us,",
+        "types": ",internal-moment-tensor,losspager,moment-tensor,origin,phase-data,shakemap,",
+        "nst": 92,
+        "dmin": 14.78,
+        "rms": 1.31,
+        "gap": 50,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 5.9 - Balleny Islands region"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          170.9371,
+          -63.0918,
+          10
+        ]
+      },
+      "id": "us6000udd1"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.3,
+        "place": "69 km SSW of Shihezi, China",
+        "time": 1795569596424,
+        "updated": 1795570557040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udcy",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000udcy&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 284,
+        "net": "us",
+        "code": "6000udcy",
+        "ids": ",us6000udcy,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 34,
+        "dmin": 3.819,
+        "rms": 0.86,
+        "gap": 75,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.3 - 69 km SSW of Shihezi, China"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.7992,
+          43.7,
+          10
+        ]
+      },
+      "id": "us6000udcy"
+    }
+  ],
+  "bbox": [
+    -163.0363,
+    -63.0918,
+    5,
+    178.5511,
+    53.6824,
+    432.459
+  ]
+}
