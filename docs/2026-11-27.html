@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b9ba4b7ca0fd8f15e086d469b12d8d32 {
+                    position: relative;
+                    width: 100.0vw;
+                    height: 100.0vh;
+
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>/*
+ * Glyphicons Halflings -- the icon font used by folium's default Awesome Markers
+ * (Icon(prefix="glyphicon")). Extracted from Bootstrap 3's glyphicon rules only.
+ *
+ * folium previously loaded netdna's bootstrap-glyphicons.css, which despite its
+ * name ships a full Bootstrap-3 base stylesheet (normalize reset + global `body`
+ * rules) that leaked onto the host page (GH-1820). This file provides just the
+ * @font-face and .glyphicon/.glyphicon-* rules needed for the markers, with no
+ * page-wide side effects. Font files are served from jsDelivr.
+ */
+@font-face{font-family:'Glyphicons Halflings';src:url('https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/fonts/glyphicons-halflings-regular.eot');src:url('https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),url('https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/fonts/glyphicons-halflings-regular.woff') format('woff'),url('https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/fonts/glyphicons-halflings-regular.ttf') format('truetype'),url('https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');}.glyphicon{position:relative;top:1px;display:inline-block;font-family:'Glyphicons Halflings';font-style:normal;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased;}
+.glyphicon-asterisk:before{content:"\2a";}
+.glyphicon-plus:before{content:"\2b";}
+.glyphicon-euro:before{content:"\20ac";}
+.glyphicon-minus:before{content:"\2212";}
+.glyphicon-cloud:before{content:"\2601";}
+.glyphicon-envelope:before{content:"\2709";}
+.glyphicon-pencil:before{content:"\270f";}
+.glyphicon-glass:before{content:"\e001";}
+.glyphicon-music:before{content:"\e002";}
+.glyphicon-search:before{content:"\e003";}
+.glyphicon-heart:before{content:"\e005";}
+.glyphicon-star:before{content:"\e006";}
+.glyphicon-star-empty:before{content:"\e007";}
+.glyphicon-user:before{content:"\e008";}
+.glyphicon-film:before{content:"\e009";}
+.glyphicon-th-large:before{content:"\e010";}
+.glyphicon-th:before{content:"\e011";}
+.glyphicon-th-list:before{content:"\e012";}
+.glyphicon-ok:before{content:"\e013";}
+.glyphicon-remove:before{content:"\e014";}
+.glyphicon-zoom-in:before{content:"\e015";}
+.glyphicon-zoom-out:before{content:"\e016";}
+.glyphicon-off:before{content:"\e017";}
+.glyphicon-signal:before{content:"\e018";}
+.glyphicon-cog:before{content:"\e019";}
+.glyphicon-trash:before{content:"\e020";}
+.glyphicon-home:before{content:"\e021";}
+.glyphicon-file:before{content:"\e022";}
+.glyphicon-time:before{content:"\e023";}
+.glyphicon-road:before{content:"\e024";}
+.glyphicon-download-alt:before{content:"\e025";}
+.glyphicon-download:before{content:"\e026";}
+.glyphicon-upload:before{content:"\e027";}
+.glyphicon-inbox:before{content:"\e028";}
+.glyphicon-play-circle:before{content:"\e029";}
+.glyphicon-repeat:before{content:"\e030";}
+.glyphicon-refresh:before{content:"\e031";}
+.glyphicon-list-alt:before{content:"\e032";}
+.glyphicon-flag:before{content:"\e034";}
+.glyphicon-headphones:before{content:"\e035";}
+.glyphicon-volume-off:before{content:"\e036";}
+.glyphicon-volume-down:before{content:"\e037";}
+.glyphicon-volume-up:before{content:"\e038";}
+.glyphicon-qrcode:before{content:"\e039";}
+.glyphicon-barcode:before{content:"\e040";}
+.glyphicon-tag:before{content:"\e041";}
+.glyphicon-tags:before{content:"\e042";}
+.glyphicon-book:before{content:"\e043";}
+.glyphicon-print:before{content:"\e045";}
+.glyphicon-font:before{content:"\e047";}
+.glyphicon-bold:before{content:"\e048";}
+.glyphicon-italic:before{content:"\e049";}
+.glyphicon-text-height:before{content:"\e050";}
+.glyphicon-text-width:before{content:"\e051";}
+.glyphicon-align-left:before{content:"\e052";}
+.glyphicon-align-center:before{content:"\e053";}
+.glyphicon-align-right:before{content:"\e054";}
+.glyphicon-align-justify:before{content:"\e055";}
+.glyphicon-list:before{content:"\e056";}
+.glyphicon-indent-left:before{content:"\e057";}
+.glyphicon-indent-right:before{content:"\e058";}
+.glyphicon-facetime-video:before{content:"\e059";}
+.glyphicon-picture:before{content:"\e060";}
+.glyphicon-map-marker:before{content:"\e062";}
+.glyphicon-adjust:before{content:"\e063";}
+.glyphicon-tint:before{content:"\e064";}
+.glyphicon-edit:before{content:"\e065";}
+.glyphicon-share:before{content:"\e066";}
+.glyphicon-check:before{content:"\e067";}
+.glyphicon-move:before{content:"\e068";}
+.glyphicon-step-backward:before{content:"\e069";}
+.glyphicon-fast-backward:before{content:"\e070";}
+.glyphicon-backward:before{content:"\e071";}
+.glyphicon-play:before{content:"\e072";}
+.glyphicon-pause:before{content:"\e073";}
+.glyphicon-stop:before{content:"\e074";}
+.glyphicon-forward:before{content:"\e075";}
+.glyphicon-fast-forward:before{content:"\e076";}
+.glyphicon-step-forward:before{content:"\e077";}
+.glyphicon-eject:before{content:"\e078";}
+.glyphicon-chevron-left:before{content:"\e079";}
+.glyphicon-chevron-right:before{content:"\e080";}
+.glyphicon-plus-sign:before{content:"\e081";}
+.glyphicon-minus-sign:before{content:"\e082";}
+.glyphicon-remove-sign:before{content:"\e083";}
+.glyphicon-ok-sign:before{content:"\e084";}
+.glyphicon-question-sign:before{content:"\e085";}
+.glyphicon-info-sign:before{content:"\e086";}
+.glyphicon-screenshot:before{content:"\e087";}
+.glyphicon-remove-circle:before{content:"\e088";}
+.glyphicon-ok-circle:before{content:"\e089";}
+.glyphicon-ban-circle:before{content:"\e090";}
+.glyphicon-arrow-left:before{content:"\e091";}
+.glyphicon-arrow-right:before{content:"\e092";}
+.glyphicon-arrow-up:before{content:"\e093";}
+.glyphicon-arrow-down:before{content:"\e094";}
+.glyphicon-share-alt:before{content:"\e095";}
+.glyphicon-resize-full:before{content:"\e096";}
+.glyphicon-resize-small:before{content:"\e097";}
+.glyphicon-exclamation-sign:before{content:"\e101";}
+.glyphicon-gift:before{content:"\e102";}
+.glyphicon-leaf:before{content:"\e103";}
+.glyphicon-eye-open:before{content:"\e105";}
+.glyphicon-eye-close:before{content:"\e106";}
+.glyphicon-warning-sign:before{content:"\e107";}
+.glyphicon-plane:before{content:"\e108";}
+.glyphicon-random:before{content:"\e110";}
+.glyphicon-comment:before{content:"\e111";}
+.glyphicon-magnet:before{content:"\e112";}
+.glyphicon-chevron-up:before{content:"\e113";}
+.glyphicon-chevron-down:before{content:"\e114";}
+.glyphicon-retweet:before{content:"\e115";}
+.glyphicon-shopping-cart:before{content:"\e116";}
+.glyphicon-folder-close:before{content:"\e117";}
+.glyphicon-folder-open:before{content:"\e118";}
+.glyphicon-resize-vertical:before{content:"\e119";}
+.glyphicon-resize-horizontal:before{content:"\e120";}
+.glyphicon-hdd:before{content:"\e121";}
+.glyphicon-bullhorn:before{content:"\e122";}
+.glyphicon-certificate:before{content:"\e124";}
+.glyphicon-thumbs-up:before{content:"\e125";}
+.glyphicon-thumbs-down:before{content:"\e126";}
+.glyphicon-hand-right:before{content:"\e127";}
+.glyphicon-hand-left:before{content:"\e128";}
+.glyphicon-hand-up:before{content:"\e129";}
+.glyphicon-hand-down:before{content:"\e130";}
+.glyphicon-circle-arrow-right:before{content:"\e131";}
+.glyphicon-circle-arrow-left:before{content:"\e132";}
+.glyphicon-circle-arrow-up:before{content:"\e133";}
+.glyphicon-circle-arrow-down:before{content:"\e134";}
+.glyphicon-globe:before{content:"\e135";}
+.glyphicon-tasks:before{content:"\e137";}
+.glyphicon-filter:before{content:"\e138";}
+.glyphicon-fullscreen:before{content:"\e140";}
+.glyphicon-dashboard:before{content:"\e141";}
+.glyphicon-heart-empty:before{content:"\e143";}
+.glyphicon-link:before{content:"\e144";}
+.glyphicon-phone:before{content:"\e145";}
+.glyphicon-usd:before{content:"\e148";}
+.glyphicon-gbp:before{content:"\e149";}
+.glyphicon-sort:before{content:"\e150";}
+.glyphicon-sort-by-alphabet:before{content:"\e151";}
+.glyphicon-sort-by-alphabet-alt:before{content:"\e152";}
+.glyphicon-sort-by-order:before{content:"\e153";}
+.glyphicon-sort-by-order-alt:before{content:"\e154";}
+.glyphicon-sort-by-attributes:before{content:"\e155";}
+.glyphicon-sort-by-attributes-alt:before{content:"\e156";}
+.glyphicon-unchecked:before{content:"\e157";}
+.glyphicon-expand:before{content:"\e158";}
+.glyphicon-collapse-down:before{content:"\e159";}
+.glyphicon-collapse-up:before{content:"\e160";}
+.glyphicon-log-in:before{content:"\e161";}
+.glyphicon-flash:before{content:"\e162";}
+.glyphicon-log-out:before{content:"\e163";}
+.glyphicon-new-window:before{content:"\e164";}
+.glyphicon-record:before{content:"\e165";}
+.glyphicon-save:before{content:"\e166";}
+.glyphicon-open:before{content:"\e167";}
+.glyphicon-saved:before{content:"\e168";}
+.glyphicon-import:before{content:"\e169";}
+.glyphicon-export:before{content:"\e170";}
+.glyphicon-send:before{content:"\e171";}
+.glyphicon-floppy-disk:before{content:"\e172";}
+.glyphicon-floppy-saved:before{content:"\e173";}
+.glyphicon-floppy-remove:before{content:"\e174";}
+.glyphicon-floppy-save:before{content:"\e175";}
+.glyphicon-floppy-open:before{content:"\e176";}
+.glyphicon-credit-card:before{content:"\e177";}
+.glyphicon-transfer:before{content:"\e178";}
+.glyphicon-cutlery:before{content:"\e179";}
+.glyphicon-header:before{content:"\e180";}
+.glyphicon-compressed:before{content:"\e181";}
+.glyphicon-earphone:before{content:"\e182";}
+.glyphicon-phone-alt:before{content:"\e183";}
+.glyphicon-tower:before{content:"\e184";}
+.glyphicon-stats:before{content:"\e185";}
+.glyphicon-sd-video:before{content:"\e186";}
+.glyphicon-hd-video:before{content:"\e187";}
+.glyphicon-subtitles:before{content:"\e188";}
+.glyphicon-sound-stereo:before{content:"\e189";}
+.glyphicon-sound-dolby:before{content:"\e190";}
+.glyphicon-sound-5-1:before{content:"\e191";}
+.glyphicon-sound-6-1:before{content:"\e192";}
+.glyphicon-sound-7-1:before{content:"\e193";}
+.glyphicon-copyright-mark:before{content:"\e194";}
+.glyphicon-registration-mark:before{content:"\e195";}
+.glyphicon-cloud-download:before{content:"\e197";}
+.glyphicon-cloud-upload:before{content:"\e198";}
+.glyphicon-tree-conifer:before{content:"\e199";}
+.glyphicon-tree-deciduous:before{content:"\e200";}
+.glyphicon-briefcase:before{content:"\1f4bc";}
+.glyphicon-calendar:before{content:"\1f4c5";}
+.glyphicon-pushpin:before{content:"\1f4cc";}
+.glyphicon-paperclip:before{content:"\1f4ce";}
+.glyphicon-camera:before{content:"\1f4f7";}
+.glyphicon-lock:before{content:"\1f512";}
+.glyphicon-bell:before{content:"\1f514";}
+.glyphicon-bookmark:before{content:"\1f516";}
+.glyphicon-fire:before{content:"\1f525";}
+.glyphicon-wrench:before{content:"\1f527";}
+</style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b9ba4b7ca0fd8f15e086d469b12d8d32" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b9ba4b7ca0fd8f15e086d469b12d8d32 = L.map(
+                "map_b9ba4b7ca0fd8f15e086d469b12d8d32",
+                {
+                    center: [0.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 1,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_43a3a5706c5f973def190429f6669676 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_43a3a5706c5f973def190429f6669676.addTo(map_b9ba4b7ca0fd8f15e086d469b12d8d32);
+        
+    
+            var circle_marker_37dd38ee2aea5a8bb026006037298007 = L.circleMarker(
+                [0.2415, 122.7],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b9ba4b7ca0fd8f15e086d469b12d8d32);
+        
+    
+        var popup_9ae7ff47a1c33d672ce3cb04f59187b7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bff451a8c503ce66af040cd0f3f813ba = $(`<div id="html_bff451a8c503ce66af040cd0f3f813ba" style="width: 100.0%; height: 100.0%;">         <b>51 km SW of Gorontalo, Indonesia</b><br>         Magnitude: 4<br>         Depth: 316.637 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000ue0r" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_9ae7ff47a1c33d672ce3cb04f59187b7.setContent(html_bff451a8c503ce66af040cd0f3f813ba);
+            
+        
+
+        circle_marker_37dd38ee2aea5a8bb026006037298007.bindPopup(popup_9ae7ff47a1c33d672ce3cb04f59187b7)
+        ;
+
+        
+    
+    
+            var circle_marker_5d80cd83b57efda23a5d28704b831f40 = L.circleMarker(
+                [31.1518, 140.3307],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.0, "stroke": true, "weight": 3}
+            ).addTo(map_b9ba4b7ca0fd8f15e086d469b12d8d32);
+        
+    
+        var popup_690f0e2e5ee9af1020a69aa3025eab3b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_055422686c16975319322d4a25e16d12 = $(`<div id="html_055422686c16975319322d4a25e16d12" style="width: 100.0%; height: 100.0%;">         <b>Izu Islands, Japan region</b><br>         Magnitude: 4.5<br>         Depth: 10 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000ue0a" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_690f0e2e5ee9af1020a69aa3025eab3b.setContent(html_055422686c16975319322d4a25e16d12);
+            
+        
+
+        circle_marker_5d80cd83b57efda23a5d28704b831f40.bindPopup(popup_690f0e2e5ee9af1020a69aa3025eab3b)
+        ;
+
+        
+    
+    
+            var circle_marker_1d7a84f9ffbc51c370fc8a11873a6f61 = L.circleMarker(
+                [-6.1581, 130.9194],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.6, "stroke": true, "weight": 3}
+            ).addTo(map_b9ba4b7ca0fd8f15e086d469b12d8d32);
+        
+    
+        var popup_b4c3191b8849878446778ae1a5007875 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0ce24c9acb70eb3fcc8be0e80c3f10ad = $(`<div id="html_0ce24c9acb70eb3fcc8be0e80c3f10ad" style="width: 100.0%; height: 100.0%;">         <b>211 km WSW of Tual, Indonesia</b><br>         Magnitude: 4.3<br>         Depth: 65.91 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000udwp" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_b4c3191b8849878446778ae1a5007875.setContent(html_0ce24c9acb70eb3fcc8be0e80c3f10ad);
+            
+        
+
+        circle_marker_1d7a84f9ffbc51c370fc8a11873a6f61.bindPopup(popup_b4c3191b8849878446778ae1a5007875)
+        ;
+
+        
+    
+    
+            var circle_marker_22358c6b48025ff02efa3b5bae405efc = L.circleMarker(
+                [-18.3294, -175.1805],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.0, "stroke": true, "weight": 3}
+            ).addTo(map_b9ba4b7ca0fd8f15e086d469b12d8d32);
+        
+    
+        var popup_4f2c9867f9c6279245fa9658d4baabbf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9a4c65e897f9518986c0b41ac510a379 = $(`<div id="html_9a4c65e897f9518986c0b41ac510a379" style="width: 100.0%; height: 100.0%;">         <b>131 km WNW of Neiafu, Tonga</b><br>         Magnitude: 4.5<br>         Depth: 271.603 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000udwh" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_4f2c9867f9c6279245fa9658d4baabbf.setContent(html_9a4c65e897f9518986c0b41ac510a379);
+            
+        
+
+        circle_marker_22358c6b48025ff02efa3b5bae405efc.bindPopup(popup_4f2c9867f9c6279245fa9658d4baabbf)
+        ;
+
+        
+    
+    
+            var circle_marker_f3670ae6e9fc9a64f3d4eae55d23c914 = L.circleMarker(
+                [51.3928, 159.3662],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.6, "stroke": true, "weight": 3}
+            ).addTo(map_b9ba4b7ca0fd8f15e086d469b12d8d32);
+        
+    
+        var popup_9baea9f803b9acba279b0a9806bbe72f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_05717f1584aea84a7344e35c8b0aa4f0 = $(`<div id="html_05717f1584aea84a7344e35c8b0aa4f0" style="width: 100.0%; height: 100.0%;">         <b>183 km SSE of Vilyuchinsk, Russia</b><br>         Magnitude: 4.8<br>         Depth: 35.488 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000udw4" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_9baea9f803b9acba279b0a9806bbe72f.setContent(html_05717f1584aea84a7344e35c8b0aa4f0);
+            
+        
+
+        circle_marker_f3670ae6e9fc9a64f3d4eae55d23c914.bindPopup(popup_9baea9f803b9acba279b0a9806bbe72f)
+        ;
+
+        
+    
+    
+            var circle_marker_cdde770ed0c9974a3c6d63eaa2d740dc = L.circleMarker(
+                [-20.0627, -177.9493],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.2, "stroke": true, "weight": 3}
+            ).addTo(map_b9ba4b7ca0fd8f15e086d469b12d8d32);
+        
+    
+        var popup_189b2bbd836d4e5b409fc29b48d7db2e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_50766462b23fca4d1ccffc911dff36eb = $(`<div id="html_50766462b23fca4d1ccffc911dff36eb" style="width: 100.0%; height: 100.0%;">         <b>Fiji region</b><br>         Magnitude: 4.1<br>         Depth: 554.031 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000udvv" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_189b2bbd836d4e5b409fc29b48d7db2e.setContent(html_50766462b23fca4d1ccffc911dff36eb);
+            
+        
+
+        circle_marker_cdde770ed0c9974a3c6d63eaa2d740dc.bindPopup(popup_189b2bbd836d4e5b409fc29b48d7db2e)
+        ;
+
+        
+    
+    
+            var circle_marker_45df4f8631997e71c90f5546077a838e = L.circleMarker(
+                [-44.568, -79.7614],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_b9ba4b7ca0fd8f15e086d469b12d8d32);
+        
+    
+        var popup_96f07cfbd96ed555a4648c39203d41f4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_381e4b469f4c3d8db954a3fbe0681c37 = $(`<div id="html_381e4b469f4c3d8db954a3fbe0681c37" style="width: 100.0%; height: 100.0%;">         <b>Off the coast of Aisen, Chile</b><br>         Magnitude: 5<br>         Depth: 10 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000udua" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_96f07cfbd96ed555a4648c39203d41f4.setContent(html_381e4b469f4c3d8db954a3fbe0681c37);
+            
+        
+
+        circle_marker_45df4f8631997e71c90f5546077a838e.bindPopup(popup_96f07cfbd96ed555a4648c39203d41f4)
+        ;
+
+        
+    
+    
+            var circle_marker_9946fb1781e86bf27a8b85daa15499cf = L.circleMarker(
+                [2.0437, 126.6462],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.2, "stroke": true, "weight": 3}
+            ).addTo(map_b9ba4b7ca0fd8f15e086d469b12d8d32);
+        
+    
+        var popup_a29e6153d10a945739a2f4de68e1416b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_456c1c93d6e967a31a32792d715f20e0 = $(`<div id="html_456c1c93d6e967a31a32792d715f20e0" style="width: 100.0%; height: 100.0%;">         <b>155 km WNW of Tobelo, Indonesia</b><br>         Magnitude: 4.6<br>         Depth: 42.538 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000udu6" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_a29e6153d10a945739a2f4de68e1416b.setContent(html_456c1c93d6e967a31a32792d715f20e0);
+            
+        
+
+        circle_marker_9946fb1781e86bf27a8b85daa15499cf.bindPopup(popup_a29e6153d10a945739a2f4de68e1416b)
+        ;
+
+        
+    
+    
+            var circle_marker_ba6f19b511dd14114b379c5196a1c621 = L.circleMarker(
+                [-14.6253, 167.8571],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_b9ba4b7ca0fd8f15e086d469b12d8d32);
+        
+    
+        var popup_52f00409ee5b400980c7144eab541ed1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1ce301a352afceb0eef26db627282362 = $(`<div id="html_1ce301a352afceb0eef26db627282362" style="width: 100.0%; height: 100.0%;">         <b>89 km SSE of Sola, Vanuatu</b><br>         Magnitude: 5<br>         Depth: 8.982 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000udtu" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_52f00409ee5b400980c7144eab541ed1.setContent(html_1ce301a352afceb0eef26db627282362);
+            
+        
+
+        circle_marker_ba6f19b511dd14114b379c5196a1c621.bindPopup(popup_52f00409ee5b400980c7144eab541ed1)
+        ;
+
+        
+    
+    
+            var circle_marker_a8598dd2d48ca3dc476eda5457a0b80c = L.circleMarker(
+                [-9.5793, 161.2358],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.2, "stroke": true, "weight": 3}
+            ).addTo(map_b9ba4b7ca0fd8f15e086d469b12d8d32);
+        
+    
+        var popup_8ba2dac14094d01055474ba45afaa8ed = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_575378deda5663b9ce1263552b2999a6 = $(`<div id="html_575378deda5663b9ce1263552b2999a6" style="width: 100.0%; height: 100.0%;">         <b>107 km SSE of Auki, Solomon Islands</b><br>         Magnitude: 5.1<br>         Depth: 74.064 km<br>         <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000udt9" target="_blank">USGS event page</a>         </div>`)[0];
+                popup_8ba2dac14094d01055474ba45afaa8ed.setContent(html_575378deda5663b9ce1263552b2999a6);
+            
+        
+
+        circle_marker_a8598dd2d48ca3dc476eda5457a0b80c.bindPopup(popup_8ba2dac14094d01055474ba45afaa8ed)
+        ;
+
+        
+    
+</script>
+</html>

@@ -1,0 +1,421 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "generated": 1795876677000,
+    "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2026-11-27&endtime=2026-11-28&minmagnitude=4",
+    "title": "USGS Earthquakes",
+    "status": 200,
+    "api": "2.8.4",
+    "count": 10
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4,
+        "place": "51 km SW of Gorontalo, Indonesia",
+        "time": 1795822913872,
+        "updated": 1795836636040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ue0r",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000ue0r&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 246,
+        "net": "us",
+        "code": "6000ue0r",
+        "ids": ",us6000ue0r,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 26,
+        "dmin": 5.994,
+        "rms": 0.92,
+        "gap": 124,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.0 - 51 km SW of Gorontalo, Indonesia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          122.7,
+          0.2415,
+          316.637
+        ]
+      },
+      "id": "us6000ue0r"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.5,
+        "place": "Izu Islands, Japan region",
+        "time": 1795816048211,
+        "updated": 1795820215040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ue0a",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000ue0a&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 312,
+        "net": "us",
+        "code": "6000ue0a",
+        "ids": ",us6000ue0a,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 27,
+        "dmin": 5.017,
+        "rms": 0.83,
+        "gap": 154,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.5 - Izu Islands, Japan region"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.3307,
+          31.1518,
+          10
+        ]
+      },
+      "id": "us6000ue0a"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.3,
+        "place": "211 km WSW of Tual, Indonesia",
+        "time": 1795786806122,
+        "updated": 1795814549040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udwp",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000udwp&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 284,
+        "net": "us",
+        "code": "6000udwp",
+        "ids": ",us6000udwp,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 18,
+        "dmin": 6.647,
+        "rms": 0.67,
+        "gap": 136,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.3 - 211 km WSW of Tual, Indonesia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          130.9194,
+          -6.1581,
+          65.91
+        ]
+      },
+      "id": "us6000udwp"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.5,
+        "place": "131 km WNW of Neiafu, Tonga",
+        "time": 1795783696841,
+        "updated": 1795786643040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udwh",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000udwh&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 312,
+        "net": "us",
+        "code": "6000udwh",
+        "ids": ",us6000udwh,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 23,
+        "dmin": 5.031,
+        "rms": 0.53,
+        "gap": 103,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.5 - 131 km WNW of Neiafu, Tonga"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -175.1805,
+          -18.3294,
+          271.603
+        ]
+      },
+      "id": "us6000udwh"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.8,
+        "place": "183 km SSE of Vilyuchinsk, Russia",
+        "time": 1795777345335,
+        "updated": 1795778253040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udw4",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000udw4&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 354,
+        "net": "us",
+        "code": "6000udw4",
+        "ids": ",us6000udw4,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 62,
+        "dmin": 2,
+        "rms": 0.81,
+        "gap": 144,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.8 - 183 km SSE of Vilyuchinsk, Russia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          159.3662,
+          51.3928,
+          35.488
+        ]
+      },
+      "id": "us6000udw4"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.1,
+        "place": "Fiji region",
+        "time": 1795773788388,
+        "updated": 1795778928040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udvv",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000udvv&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 259,
+        "net": "us",
+        "code": "6000udvv",
+        "ids": ",us6000udvv,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 18,
+        "dmin": 4.382,
+        "rms": 0.46,
+        "gap": 110,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.1 - Fiji region"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -177.9493,
+          -20.0627,
+          554.031
+        ]
+      },
+      "id": "us6000udvv"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5,
+        "place": "Off the coast of Aisen, Chile",
+        "time": 1795754676196,
+        "updated": 1795755778040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udua",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000udua&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 385,
+        "net": "us",
+        "code": "6000udua",
+        "ids": ",us6000udua,",
+        "sources": ",us,",
+        "types": ",moment-tensor,origin,phase-data,",
+        "nst": 60,
+        "dmin": 4.481,
+        "rms": 1.06,
+        "gap": 149,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 5.0 - Off the coast of Aisen, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -79.7614,
+          -44.568,
+          10
+        ]
+      },
+      "id": "us6000udua"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 4.6,
+        "place": "155 km WNW of Tobelo, Indonesia",
+        "time": 1795753030107,
+        "updated": 1795753991040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udu6",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000udu6&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 326,
+        "net": "us",
+        "code": "6000udu6",
+        "ids": ",us6000udu6,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 36,
+        "dmin": 9.829,
+        "rms": 0.81,
+        "gap": 105,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 4.6 - 155 km WNW of Tobelo, Indonesia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          126.6462,
+          2.0437,
+          42.538
+        ]
+      },
+      "id": "us6000udu6"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5,
+        "place": "89 km SSE of Sola, Vanuatu",
+        "time": 1795745601018,
+        "updated": 1795788678492,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udtu",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000udtu&format=geojson",
+        "felt": 1,
+        "cdi": 1,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 385,
+        "net": "us",
+        "code": "6000udtu",
+        "ids": ",us6000udtu,",
+        "sources": ",us,",
+        "types": ",dyfi,origin,phase-data,",
+        "nst": 29,
+        "dmin": 6.804,
+        "rms": 0.59,
+        "gap": 110,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 5.0 - 89 km SSE of Sola, Vanuatu"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          167.8571,
+          -14.6253,
+          8.982
+        ]
+      },
+      "id": "us6000udtu"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 5.1,
+        "place": "107 km SSE of Auki, Solomon Islands",
+        "time": 1795738020857,
+        "updated": 1795739200040,
+        "tz": null,
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000udt9",
+        "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000udt9&format=geojson",
+        "felt": null,
+        "cdi": null,
+        "mmi": null,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 400,
+        "net": "us",
+        "code": "6000udt9",
+        "ids": ",us6000udt9,",
+        "sources": ",us,",
+        "types": ",origin,phase-data,",
+        "nst": 49,
+        "dmin": 1.276,
+        "rms": 1.09,
+        "gap": 105,
+        "magType": "mb",
+        "type": "earthquake",
+        "title": "M 5.1 - 107 km SSE of Auki, Solomon Islands"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          161.2358,
+          -9.5793,
+          74.064
+        ]
+      },
+      "id": "us6000udt9"
+    }
+  ],
+  "bbox": [
+    -177.9493,
+    -44.568,
+    8.982,
+    167.8571,
+    51.3928,
+    554.031
+  ]
+}
